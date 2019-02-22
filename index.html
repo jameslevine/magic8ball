@@ -14,7 +14,7 @@
       border-radius: 50%;
       background-color: black;
     }
-    .whitecircle {
+    #whitecircle {
       position: relative;
       left: 35%;
       top: 35%;
@@ -24,13 +24,24 @@
       background-color: white;
     }
 
-    .number {
+    #number {
       position: relative;
       left: 40%;
       top: 25%;
       width: 200px;
       height: 200px;
       font-size: 100px;
+      opacity: 1;
+    }
+
+    #result {
+      position: absolute;
+      left: 20%;
+      top: 40%;
+      font-size: 15px;
+      color: white;
+      z-index: 1;
+      opacity: 1;
     }
 
   </style>
@@ -38,15 +49,45 @@
 
 <body>
   <h1>The Magic 8 Ball</h1>
+  <h2>Made for Cally</h2>
   <div class="blackcircle">
-  <div class="whitecircle">
-  <h1 class="number">8</h1>
+  <div id="whitecircle">
+  <h1 id="number">8</h1>
+  <h1 id="result"></h1>
   </div>
   </div>
   <button onclick="rollBall()">Click to Roll</button>
   <script>
+var answers = {
+1:"It is certain.",
+2:"It is decidedly so.",
+3:"Without a doubt.",
+4:"Yes - definitely.",
+5:"You may rely on it.",
+6:"As I see it, yes.",
+7:"Most likely.",
+8:"Outlook good.",
+9:"Yes.",
+10:"Signs point to yes.",
+11:"Reply hazy, try again.",
+12:"Ask again later",
+13:"Better not tell you now.",
+14:"Cannot predict now.",
+15:"Concentrate and ask again.",
+16:"Don't count on it.",
+17:"My reply is no.",
+18:"My sources say no.",
+19:"Outlook not so good.",
+20:"Very doubtful."};
+
 function rollBall() {
   console.log("Ball is rolling");
+  let randomNum = Math.ceil(20*(Math.random()));
+  let result = answers[randomNum];
+  console.log(String(answers[randomNum]));
+  document.getElementById("result").innerHTML = result;
+  document.getElementById("number").style.opacity = 0;
+  document.getElementById("whitecircle").style.backgroundColor = "grey";
 }
   </script>
 </body>
