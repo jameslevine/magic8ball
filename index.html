@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The Magic 8 Ball</title>
+  <meta name="description" content="The Magic 8 Ball">
+  <meta name="author" content="James Levine">
+  <style>
+    .blackcircle {
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background-color: black;
+    }
+    .whitecircle {
+      position: relative;
+      left: 35%;
+      top: 35%;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .number {
+      position: relative;
+      left: 40%;
+      top: 25%;
+      width: 200px;
+      height: 200px;
+      font-size: 100px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>The Magic 8 Ball</h1>
+  <div class="blackcircle">
+  <div class="whitecircle">
+  <h1 class="number">8</h1>
+  </div>
+  </div>
+  <button onclick="rollBall()">Click to Roll</button>
+  <script>
+function rollBall() {
+  console.log("Ball is rolling");
+}
+  </script>
+</body>
+</html>
